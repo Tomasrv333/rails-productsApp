@@ -1,0 +1,8 @@
+es: 
+  products:
+    index:
+      title: 'Product'
+    edit:
+      title: 'Editar producto'
+    new:
+      title: 'Añadir producto'

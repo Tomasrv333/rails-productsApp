@@ -1,11 +1,27 @@
-<%= image_tag @product.photo, width: 200 if @product.photo.attached? %>
+<div class="container mt-4">
+    <div class="column mt-4 p-4 border rounded border-secondary-subtle">
+        <div class="row">
+            <div class="col-4">
+                <%= image_tag(@product.photo, class: "photo", style: "height: 180px;") if @product.photo.attached? %>
+            </div>
+            <div class="col">
+                <h3 class='title card-title'><%= @product.title %></h3>
+                <p class='description card-text'><%= @product.description %></p>
+                <span class='price'>$<%= @product.price %></span>
+                <span class='due_date'><%= @product.due_date %></span>
+                <div class="product-options mt-4">
+                    <button class="btn btn-outline-primary">
+                        <%= link_to 'Editar producto', edit_product_path(@product) %>
+                    </button>
 
-<h1 class='title'><%= @product.title %></h1>
+                    <button class="btn btn-outline-primary">
+                        <%= link_to 'Eliminar producto', product_path(@product), data: { confirm: 'Estas seguro?', turbo_confirm: 'Estas seguro?' }, method: :delete %>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p class='description'><%= @product.description %></p>
 
-<span class='price'><%= @product.price %></span>
 
-<%= link_to 'Editar producto', edit_product_path(@product) %>
-
-<%= link_to 'Eliminar producto', product_path(@product), data: { confirm: 'Estas seguro?', turbo_confirm: 'Estas seguro?' }, method: :delete %>

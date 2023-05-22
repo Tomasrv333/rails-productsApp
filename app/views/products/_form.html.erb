@@ -25,5 +25,10 @@
         <%= form.file_field :photo %>
     </div>
 
+    <div>
+        <%= form.label :due_date %>
+        <%= form.date_field :due_date %>
+    </div>
+
     <%= form.submit %>
 <% end %>

@@ -1,5 +1,11 @@
-<%= link_to products_path do %>
-    <h1>Vendelo</h1>
-<% end %>
+<div class="pt-4 pb-4 bg-primary">
+    <div class="container d-flex justify-content-between">
+        <%= link_to products_path do %>
+            <h1 class="text-light">Vendelo</h1>
+        <% end %>
 
-<%= link_to 'Añadir producto', new_product_path %>
+        <button class="btn btn-light">
+            <%= link_to 'Añadir producto', new_product_path %>
+        </button>
+    </div>
+</div>

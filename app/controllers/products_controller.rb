@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
+
     def index
-        @products = Product.all
+        @products = Product.with_attached_photo.all
     end
 
     def show
@@ -12,10 +13,12 @@ class ProductsController < ApplicationController
     end
 
     def create        
+        @product = Product.new(product_params)
+
         if @product.save
             redirect_to products_path, notice: 'Tu producto se ha creado correctamente'
         else
-            render :new, status: :unprocessable_entity
+            render :new, status: :unprocessable_entity 
         end
     end 
 
@@ -36,11 +39,15 @@ class ProductsController < ApplicationController
 
         redirect_to products_path, notice: 'El producto se ha eliminado', status: :see_other
     end
+
+    # def due_date
+        
+    # end
     
     private
 
     def product_params
-        params.require(:product).permit(:title, :description, :price, :photo)
+        params.require(:product).permit(:title, :description, :price, :photo, :due_date)
     end
 
     def product
