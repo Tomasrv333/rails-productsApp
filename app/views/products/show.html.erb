@@ -10,13 +10,8 @@
                 <span class='price'>$<%= @product.price %></span>
                 <span class='due_date'><%= @product.due_date %></span>
                 <div class="product-options mt-4">
-                    <button class="btn btn-outline-primary">
-                        <%= link_to 'Editar producto', edit_product_path(@product) %>
-                    </button>
-
-                    <button class="btn btn-outline-primary">
-                        <%= link_to 'Eliminar producto', product_path(@product), data: { confirm: 'Estas seguro?', turbo_confirm: 'Estas seguro?' }, method: :delete %>
-                    </button>
+                    <%= link_to 'Editar producto', edit_product_path(@product), class: "btn btn-outline-primary" %>
+                    <%= link_to 'Eliminar producto', product_path(@product), data: { confirm: 'Estas seguro?', turbo_confirm: 'Estas seguro?' }, method: :delete, class: "btn btn-outline-primary" %>
                 </div>
             </div>
         </div>

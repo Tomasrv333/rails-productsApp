@@ -1,5 +1,5 @@
-<%= link_to product_path(product), class: 'product card col-6 p-3 m-2', style: "width: 18rem;" do %>
-    <%= image_tag(product.photo, class: "photo card-img-top", style: "height: 180px;") if product.photo.attached? %>
-    <h3 class='title card-title'><%= product.title %></h3>
-    <span class='description card-text'><%= product.price %></span>
+<%= link_to product_path(product), class: 'product card col-6 p-3 m-2', style: "width: 16rem;" do %>
+    <%= image_tag(product.photo, class: "photo card-img-top", style: "height: 160px;") if product.photo.attached? %>
+    <h3 class='title card-title text-center'><%= product.title %></h3>
+    <span class='description card-text text-center'>$<%= product.price %></span>
 <% end %>
